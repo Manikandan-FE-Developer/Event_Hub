@@ -1,38 +1,458 @@
-.App {
+html, body {
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header & Nav bar */
+nav {
+  padding: 1rem 1rem;
+  Background-color: #ffffff;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav .navbar-brand p{
+  color: #CF2D2D;
+  font-weight: bold;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav .icons{
+  display: none;
+}
+nav .categories{
+  color: white;
+  background-color: rgb(49, 47, 47);
+  border-radius: 5px;
+  padding: 5px 10px;
+  border-style: none;
+  margin-left: 70px;
+}
+/* Search */
+nav .input-group {
+  position: relative;
+  width: 100%;
+}
+nav .input-group input{
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #B0BABF;
+}
+nav .input-group input:focus {
+  outline: none;
+}
+nav .input-group .fa-search {
+  color: gray;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 30px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 100;
+}
+nav .navFav, .navLoc{
+  cursor: pointer;
+}
+nav .navFav i, .navLoc i{
+  color: gray;
+}
+nav .signIn{
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: -120px;
+  border: 1px solid #B0BABF;
+}
+nav .navMenu ul{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+nav .navMenu ul li{
+  padding-right: 30px;
+  cursor: pointer;
+}
+/* Home page */
+.home {
+  width: 100%;
+  height: 800px;
+  color: white;
+  background: url("../public/images/Banner.jpg");
+}
+.home h1{
+  padding-top: 150px;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 5rem;
+}
+/* Shows & Events Container */
+.showsAndEvents{
+  margin: -150px 0px 0px -150px;
+}
+.showsAndEvents .Recommended{
+  display: flex;
+  justify-content: space-around;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.showsAndEvents .Recommended h1{
+  font-size: 20px;
+  font-weight: bold;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.showsAndEvents .Recommended p{
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.showsAndEvents .shows{
+  margin: -30px -200px 0px 100px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.showsAndEvents .shows::-webkit-scrollbar {
+  display: none;
+}
+.showsAndEvents .Upcoming{
+  text-align: left;
+  margin: 50px 0px 60px 300px;
+}
+.showsAndEvents .Upcoming h1{
+  font-size: 20px;
+  font-weight: bold;
+}
+.showsAndEvents .Upcoming p{
+  display: none;
+}
+.showsAndEvents .events{
+  padding: 0px 200px;
+  margin: -30px -200px 0px -100px;
+}
+/* Recommended shows card*/
+.show-card{
+  display: flex;
+  gap: 10px;
+}
+.show-card .card {
+  width: 250px;
+  height: auto;
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.show-card .card-img {
+  position: relative;
+  overflow: hidden;
+}
+.show-card .card-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+.show-card .overlay {
+  color: white;
+  position: absolute;
+  top: 300px;
+  left: 0;
+  width: 250px;
+}
+.show-card .overlay div{
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+.show-card .card-title {
+  font-size: 12px;
+  font-weight: bold;
+  text-wrap: wrap;
+  text-align: left;
+}
+.show-card .card-text {
+  font-size: 10px;
+  opacity: 70%;
+}
+/* Upcoming events card*/
+.event-card {
+  margin: 0px 0px 0px 200px;
+  max-height: 630px;
+  overflow-y: auto;
+}
+.event-card::-webkit-scrollbar {
+  display: none;
+}
+.event-card .card {
+  width: 330px;
+  height: 300px;
+  position: relative;
+  padding: 5px;
+  border: 1px solid #B0BABF;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.event-card .card-img {
+  position: relative;
+  overflow: hidden;
+}
+.event-card .card-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+.event-card .overlay {
+  position: absolute;
+  top: 185px;
+  left: 0;
+  width: 100%;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  text-align: left;
+  border-radius: 0px 0px 10px 10px;
+}
+.event-card .overlay .card-text{
+  color: white;
+}
+.event-card .card-title {
+  color: #1E2022;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 0px 0px 10px;
+  text-align: left;
+}
+.event-card .card-text {
+  color: #989090;
+  font-size: 12px;
+}
+.event-card .flex{
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+/* Footer */
+footer {
+  width: 100%;
+  height: 75px;
+  margin-top: 23rem;
+  bottom: 0;
+  background-color: #232f3e;
+}
+footer p{
+  padding: 20px 0px 0px 0px;
+}
+@media only screen and (max-width: 764px) {
+  /* Header & Nav bar */
+  nav .categories, .input-group, .navFav, .signIn, br{
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+  nav{
+    height: 140px;
+  }
+  nav .navLogo{
+    display: flex;
+    justify-content: space-between;
+  }
+  nav .navbar-brand p{
+    font-size: 30px;
+  }
+  nav .icons{
+    display: block;
+    color: rgb(151, 147, 147);
+    font-size: 30px;
+  }
+  nav .icons i{
+    cursor: pointer;
+    padding-right: 20px;
+  }
+  nav .navLoc{
+    font-size: 25px;
+    position: absolute;
+    top: -125px;
+    left: 15px;
+  }
+  nav .navMenu{
+    position: absolute;
+    top: 80px;
+  }
+  nav .navMenu ul{
+    font-size: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  nav .navMenu ul::-webkit-scrollbar {
+    display: none;
+  }
+  /* Home page */
+  .home{
+    background-position: center;
+    background-size: cover;
+  }
+  .home h1{
+    font-size: 35px;
+    padding: 60px 30px;
+  }
+  .home p{
+    margin-top: -50px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding: 0px 60px;
+    font-weight: normal;
+  }
+  /* Show & Event Container */
+  .showsAndEvents{
+    margin: -300px 0px 0px 0px;
+  }
+  .showsAndEvents .shows{
+    margin-left: 40px;
+  }
+  .showsAndEvents .Upcoming{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0px;
+    padding: 0px 60px;
+  }
+  .showsAndEvents .Upcoming p{
+    display: block;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .showsAndEvents .events{
+    padding: 0px;
+    margin: -50px 0px 0px -150px;
+  }
+  /* Recommended shows card */
+  .show-card .card{
+    margin-top: 0px;
+    width: 300px;
+    height: auto;
+  }
+  .show-card .overlay{
+    margin-top: 40px;
+    width: 300px;
+  }
+  .show-card .card-title{
+    font-size: 18px;
+  }
+  .show-card .card-text{
+    font-size: 16px;
+  }
+  /* Upcoming events card */
+  .event-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-height: 850px;
+    overflow-y: auto;
+  }
+  .event-card .card{
+    width: 400px;
+    height: auto;
+  }
+  .event-card .overlay{
+    margin-top: 45px;
+  }
+  .event-card .card-title{
+    font-size: 20px;
+  }
+  .event-card .card-text{
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 564px) {
+  /* Header & Nav bar */
+  nav .navbar-brand p{
+    font-size: 25px;
+  }
+  nav .icons{
+    font-size: 25px;
+  }
+  nav .navLoc{
+    font-size: 20px;
+  }
+  nav .navMenu ul{
+    font-size: 18px;
+  }
+  /* Home page */
+  .home h1{
+    font-size: 25px;
+    line-height: 50px;
+  }
+  .home p{
+    font-size: 12px;
+  }
+  /* Show & Event Container */
+  .showsAndEvents{
+    margin: -280px 0px 0px 0px;
+  }
+  .showsAndEvents .shows{
+    margin-left: 10px;
+  }
+  .showsAndEvents .Upcoming{
+    padding: 0px 30px;
+  }
+  .showsAndEvents .events{
+    padding: 0px;
+    margin: -50px 0px 0px -170px;
+  }
+  /* Recommended shows card */
+  .show-card .card{
+    width: 250px;
+  }
+  .show-card .overlay{
+    margin-top: -25px;
+    width: 250px;
+  }
+  .show-card .card-title{
+    font-size: 14px;
+  }
+  .show-card .card-text{
+    font-size: 12px;
+  }
+  /* Upcoming events card */
+  .event-card {
+    max-height: 720px;
+  }
+  .event-card .card{
+    width: 350px;
+  }
+  .event-card .overlay{
+    margin-top: 10px;
+  }
+}
+@media only screen and (max-width: 364px) {
+  /* Header & Nav bar */
+  nav .navbar-brand p{
+    font-size: 23px;
+  }
+  nav .icons{
+    font-size: 23px;
+  }
+  nav .navLoc{
+    font-size: 18px;
+  }
+  nav .navMenu ul{
+    font-size: 16px;
+  }
+  /* Home page */
+  .home h1{
+    font-size: 23px;
+    line-height: 50px;
+  }
+  .home p{
+    font-size: 10px;
+  }
+  /* Show & Event Container */
+  .showsAndEvents .events{
+    padding: 0px;
+  }
+  /* Upcoming events card */
+  .event-card {
+    max-height: 650px;
+  }
+  .event-card .card{
+    width: 300px;
+  }
+  .event-card .overlay{
+    margin-top: -25px;
   }
 }

@@ -17,7 +17,7 @@ export default function Header() {
             </div>
             <div className="col-12 col-md-5 mt-2 mt-md-0 navSearch">
                 <div className="input-group">
-                    <input type="text" placeholder="Enter Event Name ..."/>
+                    <input type="text" placeholder="Enter Event Name..."/>
                     <i className="fa fa-search"></i>
                 </div>
             </div>

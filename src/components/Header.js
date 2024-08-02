@@ -17,7 +17,7 @@ export default function Header() {
             </div>
             <div className="col-12 col-md-5 mt-2 mt-md-0 navSearch">
                 <div className="input-group">
-                    <input type="text" placeholder="Enter Product Name ..."/>
+                    <input type="text" placeholder="Enter Event Name ..."/>
                     <i className="fa fa-search"></i>
                 </div>
             </div>
@@ -33,7 +33,7 @@ export default function Header() {
             <div className="col-12 col-md-2 mt-4 mt-md-0 text-center d-flex align-items-center justify-content-center">
                 <div className="navLoc">
                     <i className="fa fa-map-marker mr-1"></i>
-                    <span className="ml-1"> Mumbai, India <i class="fa fa-chevron-right ml-1"></i></span>
+                    <span className="ml-1"> Bengaluru, India <i class="fa fa-chevron-right ml-1"></i></span>
                 </div>
             </div>
             <div className="col-12 col-md-9 mt-4 mt-md-0 text-center navMenu">
